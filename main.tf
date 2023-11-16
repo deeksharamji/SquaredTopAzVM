@@ -45,7 +45,7 @@ resource "azurerm_subnet" "example_subnet" {
 name = "${var.resource_prefix}-subnet"
 resource_group_name = azurerm_resource_group.example_rg.name
 virtual_network_name = azurerm_virtual_network.example_vnet.name
-address_prefix = var.node_address_prefix
+address_prefixes = var.node_address_prefixes
 }
 
 # Create Linux Public IP
