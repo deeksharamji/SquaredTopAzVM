@@ -169,3 +169,4 @@ environment = "Test"
   source_image_id = data.azurerm_shared_image.example.id
 }
 }
+}
