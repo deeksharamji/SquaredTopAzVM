@@ -167,7 +167,7 @@ admin_password      = var.admin_password
  #   storage_account_type = "Standard_LRS"
  # }
 
-storage_os_disk {
+os_disk {
 name = "myosdisk-${count.index}"
 caching = "ReadWrite"
 create_option = "FromImage"
