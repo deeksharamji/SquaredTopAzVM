@@ -58,7 +58,7 @@ name = "${var.resource_prefix}-${format("%02d", count.index)}-PublicIP"
 #name = "${var.resource_prefix}-PublicIP"
 location = azurerm_resource_group.example_rg.location
 resource_group_name = azurerm_resource_group.example_rg.name
-#allocation_method = var.Environment == "Test" ? "Static" : "Dynamic"
+allocation_method = var.Environment == "Test" ? "Static" : "Dynamic"
 
 tags = {
 environment = "Test"
