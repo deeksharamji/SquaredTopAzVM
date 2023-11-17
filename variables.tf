@@ -23,7 +23,6 @@ type = string
 
 variable "node_count" {
 type = number
-default =2
 }
 
 variable "admin_username" {
