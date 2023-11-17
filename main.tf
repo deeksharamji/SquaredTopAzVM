@@ -50,7 +50,6 @@ virtual_network_name = azurerm_virtual_network.example_vnet.name
 address_prefixes = [var.node_address_prefix]
 }
 
-
 # Create Windows Public IP
 
 resource "azurerm_public_ip" "example_public_ip" {
@@ -66,14 +65,14 @@ environment = "Test"
 }
 }
 
-# Create Network Interface
+# Create Network Interface Card
 resource "azurerm_network_interface" "example_nic" {
 count = var.node_count
 #name = "${var.resource_prefix}-NIC"
 name = "${var.resource_prefix}-${format("%02d", count.index)}-NIC"
 location = azurerm_resource_group.example_rg.location
 resource_group_name = azurerm_resource_group.example_rg.name
-#
+
 
 ip_configuration {
 name = "internal"
@@ -126,7 +125,8 @@ count = var.node_count
  resource_group_name = azurerm_resource_group.example_rg.name
  location = azurerm_resource_group.example_rg.location
  size ="Standard_DS1_v2"
-  #vm_size = "Standard_A1_v2"
+
+ #vm_size = "Standard_A1_v2"
 
 admin_username      = var.admin_username
 admin_password      = var.admin_password
@@ -172,8 +172,8 @@ name = "myosdisk-${count.index}"
 caching = "ReadWrite"
 #create_option = "FromImage"
 storage_account_type  = "Standard_LRS" 
-# You can change this to ""Premium_LRS" if needed
 
+# You can change this to ""Premium_LRS" if needed
 disk_size_gb      = 128               
 # Adjust the disk size as needed
 }
@@ -187,7 +187,6 @@ disk_size_gb      = 128
  # }
  # enable_automatic_updates = true
  # provision_vm_agent       = true
-
 
 
 tags = {

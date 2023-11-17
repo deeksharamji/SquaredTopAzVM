@@ -1,4 +1,4 @@
-﻿node_location = "East US 2"
+﻿node_location = "East US"
 resource_prefix = "Winnode"
 node_address_prefix = "10.0.1.0/24"
 Environment = "Test"

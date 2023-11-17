@@ -13,7 +13,7 @@ default = ["10.0.0.0/16"]
 #variable for network range
 
 variable "node_address_prefix" {
-default = "10.0.1.0/24"
+#default = "10.0.1.0/24"
 }
 
 #variable for Environment
