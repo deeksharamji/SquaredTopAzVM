@@ -7,13 +7,14 @@ type = string
 }
 
 variable "node_address_space" {
-default = ["1.0.0.0/16"]
+default = ["10.0.0.0/16"]
 }
 
 #variable for network range
 
 variable "node_address_prefix" {
-default = "1.0.1.0/24"
+type = string
+default = "10.0.1.0/24"
 }
 
 #variable for Environment
@@ -23,4 +24,5 @@ type = string
 
 variable "node_count" {
 type = number
+default =5
 }

@@ -45,10 +45,10 @@ resource "azurerm_subnet" "example_subnet" {
 name = "${var.resource_prefix}-subnet"
 resource_group_name = azurerm_resource_group.example_rg.name
 virtual_network_name = azurerm_virtual_network.example_vnet.name
-address_prefixes = var.node_address_prefixes
+address_prefixes = var.node_address_prefix
 }
 
-# Create Linux Public IP
+# Create Linux/Windows Public IP
 resource "azurerm_public_ip" "example_public_ip" {
 count = var.node_count
 name = "${var.resource_prefix}-${format("%02d", count.index)}-PublicIP"
