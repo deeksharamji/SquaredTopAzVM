@@ -58,7 +58,7 @@ name = "${var.resource_prefix}-${format("%02d", count.index)}-PublicIP"
 #name = "${var.resource_prefix}-PublicIP"
 location = azurerm_resource_group.example_rg.location
 resource_group_name = azurerm_resource_group.example_rg.name
-allocation_method = var.Environment == "Test" ? "Static" : "Dynamic"
+#allocation_method = var.Environment == "Test" ? "Static" : "Dynamic"
 
 tags = {
 environment = "Test"
@@ -171,7 +171,7 @@ os_disk {
 name = "myosdisk-${count.index}"
 caching = "ReadWrite"
 #create_option = "FromImage"
-storage_account_type  = "Standard_LRS" 
+storage_account_type  = "Premium_LRS" 
 # You can change this to ""Premium_LRS" if needed
 disk_size_gb      = 128               
 # Adjust the disk size as needed
