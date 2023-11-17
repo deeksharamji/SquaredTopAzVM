@@ -25,3 +25,13 @@ variable "node_count" {
 type = number
 default =5
 }
+
+variable "admin_username" {
+  description = "Admin username for VMs"
+  type        = string
+ }
+
+variable "admin_password" {
+  description = "Admin password for VMs"
+  type        = string
+ }
