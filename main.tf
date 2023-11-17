@@ -141,16 +141,16 @@ admin_password      = var.admin_password
   }
   
 
-os_profile {
-computer_name = "Windowshost"
-admin_username      = var.admin_username
-admin_password      = var.admin_password
-}
+#os_profile {
+#computer_name = "Windowshost"
+#admin_username      = var.admin_username
+#admin_password      = var.admin_password
+#}
 
-  os_profile_windows_config {
-    enable_automatic_upgrades = false
-    provision_vm_agent       = true
-  }
+ # os_profile_windows_config {
+  #  enable_automatic_upgrades = false
+   # provision_vm_agent       = true
+  #}
 
 
  # name                  = "example-machine"
@@ -167,12 +167,13 @@ admin_password      = var.admin_password
  #   storage_account_type = "Standard_LRS"
  # }
 
-# storage_os_disk {
-#name = "myosdisk-${count.index}"
-#caching = "ReadWrite"
-#create_option = "FromImage"
-#managed_disk_type = "Standard_LRS"
-#}
+storage_os_disk {
+name = "myosdisk-${count.index}"
+caching = "ReadWrite"
+create_option = "FromImage"
+managed_disk_type = "Standard_LRS" # You can change this to ""Premium_LRS" if needed
+disk_size_gb      = 128            # Adjust the disk size as needed
+}
   
 
   #source_image_reference {
