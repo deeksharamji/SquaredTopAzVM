@@ -170,9 +170,12 @@ admin_password      = var.admin_password
 os_disk {
 name = "myosdisk-${count.index}"
 caching = "ReadWrite"
-create_option = "FromImage"
-managed_disk_type = "Standard_LRS" # You can change this to ""Premium_LRS" if needed
-disk_size_gb      = 128            # Adjust the disk size as needed
+#create_option = "FromImage"
+storage_account_type  = "Standard_LRS" 
+# You can change this to ""Premium_LRS" if needed
+
+disk_size_gb      = 128               
+# Adjust the disk size as needed
 }
   
 
