@@ -1,10 +1,10 @@
 ﻿# Configure the Azure Provider
 #provider "azurerm" {
 # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
-#subscription_id = "9fcc9c96–8044–XXXX-XXXX–XXXXXXXXXXXX"
+#subscription_id = "92235c65-e9e9-4882-b8e1-e70a270aa923"
 #client_id = "97545937–XXXX–XXXX-XXXX-XXXXXXXXXXXX"
 #client_secret = ".3GGR_XXXXX~XXXX-XXXXXXXXXXXXXXXX"
-#tenant_id = "73d20f0d-XXXX–XXXX–XXXX-XXXXXXXXXXXX"
+#tenant_id = "da07dd9c-80c4-4a13-94e9-a003e4f2c794"
 #version = "=2.0.0"
 #features {}
 #}
@@ -192,5 +192,6 @@ tags = {
 environment = "Test"
 }
 #  source_image_id = data.azurerm_shared_image.example.id
+# test1
 }
 
