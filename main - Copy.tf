@@ -78,3 +78,4 @@ storage_account_type  = "Premium_LRS"
 disk_size_gb      = 128               
 # Adjust the disk size as needed
 }
+}
