@@ -54,7 +54,7 @@ address_prefixes = [var.node_address_prefix]
 
 resource "azurerm_public_ip" "example_public_ip" {
 count = var.node_count
-name = "${var.resource_prefix}-${format("%02d", count.index)}-PublicIP"
+name = "${var.resource_prefix}-${format("%02d", count.index+2)}-PublicIP"
 #name = "${var.resource_prefix}-PublicIP"
 location = azurerm_resource_group.example_rg.location
 resource_group_name = azurerm_resource_group.example_rg.name
@@ -69,7 +69,7 @@ environment = "Test"
 resource "azurerm_network_interface" "example_nic" {
 count = var.node_count
 #name = "${var.resource_prefix}-NIC"
-name = "${var.resource_prefix}-${format("%02d", count.index)}-NIC"
+name = "${var.resource_prefix}-${format("%02d", count.index+2)}-NIC"
 location = azurerm_resource_group.example_rg.location
 resource_group_name = azurerm_resource_group.example_rg.name
 
@@ -78,7 +78,7 @@ ip_configuration {
 name = "internal"
 subnet_id = azurerm_subnet.example_subnet.id
 private_ip_address_allocation = "Dynamic"
-public_ip_address_id = element(azurerm_public_ip.example_public_ip.*.id, count.index)
+public_ip_address_id = element(azurerm_public_ip.example_public_ip.*.id, count.index+2)
 
 #public_ip_address_id = azurerm_public_ip.example_public_ip.id
 #public_ip_address_id = azurerm_public_ip.example_public_ip.id
@@ -121,7 +121,7 @@ network_security_group_id = azurerm_network_security_group.example_nsg.id
 # Virtual Machine Creation — Windows
 resource "azurerm_windows_virtual_machine" "example_Win_vm" {
 count = var.node_count
- name = "${var.resource_prefix}-${format("%02d", count.index)}"
+ name = "${var.resource_prefix}-${format("%02d", count.index+2)}"
  resource_group_name = azurerm_resource_group.example_rg.name
  location = azurerm_resource_group.example_rg.location
  size ="Standard_DS1_v2"
@@ -131,7 +131,7 @@ count = var.node_count
 admin_username      = var.admin_username
 admin_password      = var.admin_password
 
- network_interface_ids = [element(azurerm_network_interface.example_nic.*.id, count.index)]
+ network_interface_ids = [element(azurerm_network_interface.example_nic.*.id, count.index+2)]
 
  source_image_reference {
     publisher = "MicrosoftWindowsDesktop"
@@ -168,7 +168,7 @@ admin_password      = var.admin_password
  # }
 
 os_disk {
-name = "myosdisk-${count.index}"
+name = "myosdisk-${count.index+2}"
 caching = "ReadWrite"
 #create_option = "FromImage"
 storage_account_type  = "Premium_LRS" 
