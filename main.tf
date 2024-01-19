@@ -140,7 +140,7 @@ admin_password      = var.admin_password
     version   = "latest"
   }
   
-
+#test comment
 #os_profile {
 #computer_name = "Windowshost"
 #admin_username      = var.admin_username
